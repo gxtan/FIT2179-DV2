@@ -1,34 +1,92 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Debug Map: Checking GeoJSON Load",
+  "title": "Median Household Income by Malaysian State",
   "width": 800,
   "height": 500,
-
+  "params": [
+    {
+      "name": "Year",
+      "value": 2024,
+      "bind": {
+        "input": "select",
+        "options": [2019, 2022, 2024],
+        "name": "Select Year: "
+      }
+    },
+    {
+      "name": "zoom",
+      "select": "interval",
+      "bind": "scales"
+    }
+  ],
   "projection": {
-    "type": "mercator"
+    "type": "mercator",
+    "center": [109.5, 4.2],
+    "scale": 3000
   },
-
   "data": {
-    "url": "../data/malaysia_states.geojson",
+    "url": "../data/full_choropeth_map_household_income_percentile_by_state.csv",
     "format": {
-      "type": "geojson"
+      "type": "csv",
+      "parse": {
+        "date": "number",
+        "income": "number"
+      }
     }
   },
-
+  "transform": [
+    {
+      "filter": "datum.date == Year"
+    },
+    {
+      "lookup": "state",
+      "from": {
+        "data": {
+          "url": "../data/malaysia_state.topojson",
+          "format": {
+            "type": "topojson",
+            "feature": "states"
+          }
+        },
+        "key": "properties.Name"
+      },
+      "as": "geo"
+    }
+  ],
   "mark": {
     "type": "geoshape",
-    "fill": "lightgray",
     "stroke": "white",
     "strokeWidth": 1
   },
-
   "encoding": {
-
+    "shape": {
+      "field": "geo",
+      "type": "geojson"
+    },
+    "color": {
+      "field": "income",
+      "type": "quantitative",
+      "scale": {
+        "scheme": "blues"
+      },
+      "title": "Median Income (RM)"
+    },
     "tooltip": [
       {
-        "field": "properties.shapeName",
+        "field": "state",
         "type": "nominal",
-        "title": "State Name"
+        "title": "State"
+      },
+      {
+        "field": "date",
+        "type": "quantitative",
+        "title": "Year"
+      },
+      {
+        "field": "income",
+        "type": "quantitative",
+        "format": ",",
+        "title": "Income (RM)"
       }
     ]
   }

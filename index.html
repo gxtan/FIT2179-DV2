@@ -10,6 +10,15 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
   <link rel="stylesheet" href="css/styles.css">
+  
+  <style>
+    #map {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      display: block;
+    }
+  </style>
 </head>
 <body>
 
@@ -41,9 +50,14 @@
   </section>
 
   <script>
-    vegaEmbed('#map', '../vega-lite/new_map.json').then(function(result) {
-    }).catch(console.error);
-
+    const embedOptions = {
+      actions: false, 
+    };
+    vegaEmbed('#map', '../vega-lite/new_map.json', embedOptions)
+      .then(function(result) {
+        const view = result.view;
+      })
+      .catch(console.error);
   </script>
 
 </body>
