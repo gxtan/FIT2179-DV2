@@ -38,5 +38,6 @@ p {
 
 .vega-embed {
   margin-top: 30px;
+  align-content: center;
   width: auto;
 }
