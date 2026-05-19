@@ -1,0 +1,67 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "description": "Violin-style income distribution for 2024 using percentile data",
+
+  "data": {
+    "url": "../data/sec3_data.csv"
+  },
+
+  "transform": [
+    {
+      "filter": "datum.date == 2024"
+    },
+    {
+      "filter": "datum.variable == 'median'"
+    }
+  ],
+
+  "width": 700,
+  "height": 400,
+
+  "mark": {
+    "type": "area",
+    "interpolate": "monotone",
+    "color": "#f46d43",
+    "opacity": 0.85
+  },
+
+  "encoding": {
+    "x": {
+      "field": "percentile",
+      "type": "quantitative",
+      "title": "% of Population (Percentile)",
+      "scale": { "domain": [1, 100] },
+      "axis": {
+        "format": ".0f",
+        "labelExpr": "datum.value + '%'"
+      }
+    },
+
+    "y": {
+      "field": "income",
+      "type": "quantitative",
+      "title": "Monthly Household Income (RM)",
+      "scale": { "zero": false }
+    },
+
+    "tooltip": [
+      {
+        "field": "percentile",
+        "type": "quantitative",
+        "title": "Percentile",
+        "format": ".0f"
+      },
+      {
+        "field": "income",
+        "type": "quantitative",
+        "title": "Income (RM)"
+      }
+    ]
+  },
+
+  "config": {
+    "view": { "stroke": null },
+    "background": "white"
+  }
+}

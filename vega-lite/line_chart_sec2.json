@@ -5,7 +5,7 @@
   "height": 500,
 
   "data": {
-    "url": "../data/full_choropeth_map_household_income_percentile_by_state.csv"
+    "url": "../data/sec1_data.csv"
   },
 
   "transform": [

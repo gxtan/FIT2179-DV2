@@ -5,7 +5,7 @@
   "height": 500,
 
   "data": {
-    "url": "../data/slope_chart_sec2.csv"
+    "url": "../data/sec2_slope_data.csv"
   },
 
   "transform": [
