@@ -86,17 +86,18 @@ p {
   line-height: 1.7;
 }
 
-/* chart container */
+/* SECTION 2 */
+
 .chart-row {
   display: flex;
-  gap: 100px;
+  gap: 40px;
   justify-content: space-between;
   align-items: flex-start;
-  margin: 20px 0;
+  margin-top: 30px;
 }
 
-/* each chart */
-#chart1_sec2, #chart2_sec2 {
+#chart2_sec2,
+#chart3_sec2 {
   flex: 1;
   min-width: 0;
 }

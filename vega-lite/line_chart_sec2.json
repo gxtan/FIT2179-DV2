@@ -1,74 +1,65 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-
-  "width": 410,
-  "height": 250,
-
+  "title": "Dumbbell chart showing the 99th percentile income range by state for 2024.",
   "data": {
-    "url": "https://raw.githubusercontent.com/gxtan/FIT2179-DV2/main/data/sec1_data.csv"
+    "url": "../data/dumbbell_chart.csv"
   },
-
   "transform": [
     {
-      "filter": "datum.variable == 'median'"
+      "filter": "datum.date == 2024"
     }
   ],
-
-  "mark": {
-    "type": "line",
-    "point": true
-  },
-
+  "width": 980,
+  "height": 400,
   "encoding": {
-    "x": {
-      "field": "date",
-      "type": "ordinal",
-      "title": "Year"
-    },
-
     "y": {
-      "field": "income",
-      "type": "quantitative",
-      "title": "Median Income (RM)"
-    },
-
-    "color": {
       "field": "state",
       "type": "nominal",
-      "title": "State"
-    },
-
-    "tooltip": [
-      {
-        "field": "state",
-        "type": "nominal"
-      },
-      {
-        "field": "date",
-        "type": "ordinal",
-        "title": "Year"
-      },
-      {
-        "field": "income",
-        "type": "quantitative",
-        "title": "Income"
-      }
-    ]
-  },
-
-  "config": {
-    "view": {
-      "stroke": null
-    },
-
-    "axis": {
-      "labelFontSize": 12,
-      "titleFontSize": 14
-    },
-
-    "legend": {
-      "titleFontSize": 13,
-      "labelFontSize": 11
+      "title": "State",
+      "sort": {"field": "income", "op": "max", "order": "descending"}
     }
-  }
+  },
+  "layer": [
+    {
+      "description": "Connecting line between min and max",
+      "mark": "rule",
+      "encoding": {
+        "x": {
+          "field": "income",
+          "type": "quantitative",
+          "aggregate": "min",
+          "title": "Median Monthly Income (RM)"
+        },
+        "x2": {
+          "field": "income",
+          "aggregate": "max"
+        },
+        "color": {"value": "#dbdbdb"}
+      }
+    },
+    {
+      "description": "Dumbbell endpoints",
+      "mark": {"type": "point", "size": 80, "filled": true, "opacity": 1},
+      "encoding": {
+        "x": {
+          "field": "income",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "variable",
+          "type": "nominal",
+          "legend": null,
+          "scale": {
+            "domain": ["minimum", "maximum"],
+            "range": ["#1f77b4", "#ff7f0e"]
+          }
+        },
+        "tooltip": [
+          {"field": "state", "type": "nominal", "title": "State"},
+          {"field": "variable", "type": "nominal", "title": "Type"},
+          {"field": "income", "type": "quantitative", "title": "Income", "format": ","}
+        ]
+      }
+    }
+  ]
 }

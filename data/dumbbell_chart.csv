@@ -1,0 +1,97 @@
+date,state,percentile,variable,income
+2024,Johor,99,minimum,29564
+2024,Johor,99,maximum,37762
+2024,Kedah,99,minimum,17075
+2024,Kedah,99,maximum,19958
+2024,Kelantan,99,minimum,17844
+2024,Kelantan,99,maximum,20624
+2024,Melaka,99,minimum,27231
+2024,Melaka,99,maximum,34835
+2024,Negeri Sembilan,99,minimum,24336
+2024,Negeri Sembilan,99,maximum,31476
+2024,Pahang,99,minimum,19361
+2024,Pahang,99,maximum,21992
+2024,Perak,99,minimum,20065
+2024,Perak,99,maximum,25613
+2024,Perlis,99,minimum,18501
+2024,Perlis,99,maximum,19745
+2024,Pulau Pinang,99,minimum,27275
+2024,Pulau Pinang,99,maximum,34270
+2024,Sabah,99,minimum,22085
+2024,Sabah,99,maximum,26820
+2024,Sarawak,99,minimum,21669
+2024,Sarawak,99,maximum,26228
+2024,Selangor,99,minimum,43600
+2024,Selangor,99,maximum,63136
+2024,Terengganu,99,minimum,21938
+2024,Terengganu,99,maximum,24301
+2024,W.P. Kuala Lumpur,99,minimum,48856
+2024,W.P. Kuala Lumpur,99,maximum,59878
+2024,W.P. Labuan,99,minimum,23458
+2024,W.P. Labuan,99,maximum,29499
+2024,W.P. Putrajaya,99,minimum,40752
+2024,W.P. Putrajaya,99,maximum,45619
+2022,Johor,99,minimum,26067
+2022,Johor,99,maximum,33617
+2022,Kedah,99,minimum,18018
+2022,Kedah,99,maximum,22378
+2022,Kelantan,99,minimum,18323
+2022,Kelantan,99,maximum,21245
+2022,Melaka,99,minimum,25205
+2022,Melaka,99,maximum,31850
+2022,Negeri Sembilan,99,minimum,22641
+2022,Negeri Sembilan,99,maximum,25991
+2022,Pahang,99,minimum,16386
+2022,Pahang,99,maximum,18855
+2022,Perak,99,minimum,18369
+2022,Perak,99,maximum,22000
+2022,Perlis,99,minimum,16161
+2022,Perlis,99,maximum,19348
+2022,Pulau Pinang,99,minimum,26728
+2022,Pulau Pinang,99,maximum,32010
+2022,Sabah,99,minimum,20291
+2022,Sabah,99,maximum,26426
+2022,Sarawak,99,minimum,20669
+2022,Sarawak,99,maximum,25344
+2022,Selangor,99,minimum,40128
+2022,Selangor,99,maximum,54961
+2022,Terengganu,99,minimum,22515
+2022,Terengganu,99,maximum,27722
+2022,W.P. Kuala Lumpur,99,minimum,47686
+2022,W.P. Kuala Lumpur,99,maximum,67299
+2022,W.P. Labuan,99,minimum,23131
+2022,W.P. Labuan,99,maximum,26939
+2022,W.P. Putrajaya,99,minimum,49706
+2022,W.P. Putrajaya,99,maximum,57968
+2019,Johor,99,minimum,25930
+2019,Johor,99,maximum,33688
+2019,Kedah,99,minimum,17700
+2019,Kedah,99,maximum,21955
+2019,Kelantan,99,minimum,16720
+2019,Kelantan,99,maximum,19812
+2019,Melaka,99,minimum,26838
+2019,Melaka,99,maximum,33005
+2019,Negeri Sembilan,99,minimum,24828
+2019,Negeri Sembilan,99,maximum,28178
+2019,Pahang,99,minimum,17642
+2019,Pahang,99,maximum,21371
+2019,Perak,99,minimum,18064
+2019,Perak,99,maximum,22232
+2019,Perlis,99,minimum,14840
+2019,Perlis,99,maximum,17955
+2019,Pulau Pinang,99,minimum,24089
+2019,Pulau Pinang,99,maximum,32642
+2019,Sabah,99,minimum,19456
+2019,Sabah,99,maximum,23915
+2019,Sarawak,99,minimum,19680
+2019,Sarawak,99,maximum,23394
+2019,Selangor,99,minimum,38545
+2019,Selangor,99,maximum,49484
+2019,Terengganu,99,minimum,19540
+2019,Terengganu,99,maximum,24514
+2019,W.P. Kuala Lumpur,99,minimum,45624
+2019,W.P. Kuala Lumpur,99,maximum,61962
+2019,W.P. Labuan,99,minimum,24542
+2019,W.P. Labuan,99,maximum,30250
+2019,W.P. Putrajaya,99,minimum,51132
+2019,W.P. Putrajaya,99,maximum,60337
