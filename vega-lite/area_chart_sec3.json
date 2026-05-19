@@ -1,10 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-
-  "description": "Violin-style income distribution for 2024 using percentile data",
+  "title": "Monthly Household Income to Percentile Distribution",
 
   "data": {
-    "url": "../data/sec3_data.csv"
+    "url": "https://raw.githubusercontent.com/gxtan/FIT2179-DV2/main/data/sec3_data.csv"
   },
 
   "transform": [
@@ -16,7 +15,7 @@
     }
   ],
 
-  "width": 700,
+  "width": 970,
   "height": 400,
 
   "mark": {

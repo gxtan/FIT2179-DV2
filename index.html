@@ -27,45 +27,80 @@
     </h1>
   </header>
 
-  <section>
+<section>
 
-    <h2>
-      Income Distribution Across Malaysian States divider
-    </h2>
+  <h2>
+    Income Distribution Across Malaysian States divider
+  </h2>
 
-    <div id="map"></div>
-    <p>Household income in Malaysia varies substantially across different states, showing a clear geographic inequality. Urban economic areas such as Selangor and Kuala Lumpur consistenly has a higher household income compared to northen and eastern part of Malaysia remaining significantlly lower.</p>
-    <p>This disparity reflects the difference of industrial develpoment, employment opportunities and ubranisation across Malaysia; visulising income geographically, the uneven distribution of economic propserity becomes more apparent highlighting how location influences earning potential in Malaysia.</p>
+  <div id="chart1_sec1"></div>
+  <p>
+    Household income in Malaysia varies substantially across different states, showing a clear geographic inequality. Urban economic areas such as Selangor and Kuala Lumpur consistently have higher household income compared to northern and eastern parts of Malaysia, which remain significantly lower.
+  </p>
+  <div class="para-chart">
+    <p class="text-left">
+      This disparity reflects the difference in industrial development, employment opportunities and urbanisation across Malaysia; visualising income geographically, 
+      the uneven distribution of economic prosperity becomes more apparent highlighting how location influences earning potential in Malaysia.
+    </p>
+    <div id="chart2_sec1"></div>
+  </div>
 
-  </section>
+</section>
+
+<hr class="divider">
+
+<section>
+
+  <h2>Geographic Inequality</h2>
+
+  <!-- top paragraph -->
+  <p class="full">
+    Income inequality in Malaysia is NOT static as over time wealthier urban states has continued to grow faster comparing to rural regions. States such as Kuala Lumpur and Selangor experiences substantial increase in household income between 2019 - 2024, while lower income states showed a weaker increase;
+    this widening gap suggests the economic opportunities remain concentrated in highly urbanised regions.
+  <div class="chart-row">
+
+    <div id="chart1_sec2"></div>
+    <div id="chart2_sec2"></div>
+
+  </div>
+
+  <!-- bottom paragraph -->
+  <p class="full">
+    The presistence of these trends highlights how geography continues to play a role in financial mobility and access to higer employment and how location influences earning potential across Malaysia.
+  </p>
+
+</section>
+
 
 <hr class="divider">
 
   <section>
 
     <h2>
-      Geographic Inequality
+      Reality of Income Distribution
     </h2>
 
-    <p>Average income figures often does not cover the reality faced by most Malaysians; the gap between middle and higher-income households earner is substantial, particularly in urban states where cost of living is also higher. </p>
-    <p>Reaching the top income group (T20) requires income levels that inaccessible for a majority of household, the distribution of earnings reveals financial mobility is uneven across Malaysia, and the distance between income group is often much larger than expected.</p>
-    <p>This highlights the challenges faced by ordinary households attempting to achieve higher economic statuses.</p>
-
-    <div id="vis2"></div>
-
-  </section>
-
-  <section>
-
-    <h2>
-      3. Income Reality
-    </h2>
-
+    <!-- paragraph 1 -->
     <p>
-      TEMPORARY BODY
+      While average income figures provide a broad overview they often miss the reality faced by many most Malaysians the disparity between income gaps, from a household of B40 income to T20 it would require an almost 94% increase in their monthly income to
+      barely be classified as T20.
     </p>
 
-    <div id="vis3"></div>
+    <!-- chart1 full width -->
+    <div id="chart1_sec3"></div>
+
+    <div class="chart-text-row">
+
+      <div id="chart2_sec3"></div>
+
+      <p class="text-right">
+        The gap between middle and high household income earners is substantial, in particular urban states where living costs are also significantly higher; to reach top income groups (T20) requires levels of income that remains inaccessible to many households.
+        Furthermore, this gap is even wider amongst the T20 earners with the income require to be the top percentile being steeper and steeper every year.
+        <br><br>
+        This distribution of earnings reveal that financial mobility is uneven and the distance between income groups is often much larger than expected, highlighting the challenges faced by ordinary households attempting to achieve higher economic status.
+      </p>
+
+    </div>
 
   </section>
 
@@ -81,11 +116,28 @@
 
   </section>
 
-  <script type="text/javascript">
+<script type="text/javascript">
 
-    var specMap = "./vega-lite/choropleth_map.json";
+  var chart1_sec1 = "./vega-lite/choropleth_map_sec1.json";
+  vegaEmbed('#chart1_sec1', chart1_sec1, { actions: false });
 
-  </script>
+  var chart2_sec1 = "./vega-lite/horizontal_bar_chart.json";
+  vegaEmbed('#chart2_sec1', chart2_sec1, { actions: false });
+
+  var chart1_sec2 = "./vega-lite/line_chart_sec2.json";
+  vegaEmbed('#chart1_sec2', chart1_sec2, { actions: false });
+
+  var chart2_sec2 = "./vega-lite/slope_chart_sec2.json";
+  vegaEmbed('#chart2_sec2', chart2_sec2, { actions: false });
+
+  var chart1_sec3 = "./vega-lite/area_chart_sec3.json";
+  vegaEmbed('#chart1_sec3', chart1_sec3, { actions: false });
+
+  var chart2_sec3 = "./vega-lite/waffle_chart_sec3.json";
+  vegaEmbed('#chart2_sec3', chart2_sec3, { actions: false });
+
+
+</script>
 
 </body>
 </html>
