@@ -53,7 +53,7 @@
 
       "scale": {
         "type": "log",
-        "scheme": "goldgreen"
+        "scheme": "blues"
       },
 
       "title": "Total GDP"
