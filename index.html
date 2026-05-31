@@ -4,10 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>
-    What It Takes To Become a Higher Income Earner in Malaysia
-  </title>
+  <title>What It Takes To Become a High Income Earner in Malaysia</title>
 
   <!-- Vega libraries -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
@@ -16,147 +13,178 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="./css/styles.css">
-
 </head>
 
 <body>
 
   <header>
-    <h1>
-      What It Takes To Become A High Income Earner In Malaysia
-    </h1>
+    <h1>What It Takes To Become A High Income Earner In Malaysia</h1>
   </header>
 
-<section>
-
-  <h2>
-    Income Distribution Across Malaysian States divider
-  </h2>
-
-  <div id="chart1_sec1"></div>
-  <p>
-    Household income in Malaysia varies substantially across different states, showing a clear geographic inequality. Urban economic areas such as Selangor and Kuala Lumpur consistently have higher household income compared to northern and eastern parts of Malaysia, which remain significantly lower.
-  </p>
-  <div class="para-chart">
-    <p class="text-left">
-      This disparity reflects the difference in industrial development, employment opportunities and urbanisation across Malaysia; visualising income geographically, 
-      the uneven distribution of economic prosperity becomes more apparent highlighting how location influences earning potential in Malaysia.
-    </p>
-    <div id="chart2_sec1"></div>
-  </div>
-
-</section>
-
-<hr class="divider">
-
-<section>
-
-  <h2>Geographic Inequality</h2>
-
-  <!-- top paragraph -->
-  <p class="full">
-    Income inequality in Malaysia is NOT static as over time wealthier urban states has continued to grow faster comparing to rural regions. States such as Kuala Lumpur and Selangor experiences substantial increase in household income between 2019 - 2024, while lower income states showed a weaker increase;
-    this widening gap suggests the economic opportunities remain concentrated in highly urbanised regions.
-  </p>
-
-  <!-- top chart -->
-  <div id="chart1_sec2"></div>
-
-  <!-- middle paragraph -->
-  <p class="full">
-    The persistence of these trends highlights how geography continues to play a role in financial mobility and access to higher employment opportunities. Urban regions continue attracting stronger investment, better infrastructure and higher-paying industries, further reinforcing regional inequality across Malaysia.
-  </p>
-
-  <!-- bottom charts -->
-  <div class="chart-row">
-
-    <div id="chart2_sec2"></div>
-
-    <div id="chart3_sec2"></div>
-
-  </div>
-
-</section>
-
-
-<hr class="divider">
-
   <section>
+    <h2>Income Distribution Across Malaysian States</h2>
 
-    <h2>
-      Reality of Income Distribution
-    </h2>
+    <div id="sec1_c1"></div>
 
-    <!-- paragraph 1 -->
     <p>
-      While average income figures provide a broad overview they often miss the reality faced by many most Malaysians the disparity between income gaps, from a household of B40 income to T20 it would require an almost 94% increase in their monthly income to
-      barely be classified as T20.
+      Malaysia's economic prosperity is highly localized, clustering heavily within urban powerhouses like Kuala Lumpur and Selangor.
+      <br><br>
+      Moving towards East Malaysia reveals a stark drop in baseline median household income, where regional economies operate on an entirely different financial plane.
     </p>
 
-    <!-- chart1 full width -->
-    <div id="chart1_sec3"></div>
+    <div class="split-layout">
 
-    <div class="chart-text-row">
+      <div class="chart-panel">
+        <div id="sec1_c2"></div>
+      </div>
 
-      <div id="chart2_sec3"></div>
-
-      <p class="text-right">
-        The gap between middle and high household income earners is substantial, in particular urban states where living costs are also significantly higher; to reach top income groups (T20) requires levels of income that remains inaccessible to many households.
-        Furthermore, this gap is even wider amongst the T20 earners with the income require to be the top percentile being steeper and steeper every year.
-        <br><br>
-        This distribution of earnings reveal that financial mobility is uneven and the distance between income groups is often much larger than expected, highlighting the challenges faced by ordinary households attempting to achieve higher economic status.
-      </p>
+      <div class="text-panel">
+        <p>
+          Kuala Lumpur, Putrajaya and Selangor operate in a league of their own, with the average monthly household mean income
+          <strong>completely eclipsing the rest of the other states</strong>.
+          <br><br>
+          This massive capital city premium means that an ordinary middle-class lifestyle would instantly qualify as elite upper-tier wealth anywhere else in Malaysia.
+        </p>
+      </div>
 
     </div>
 
   </section>
 
+  <hr class="divider">
+
   <section>
+    <h2>Geographic Inequality</h2>
 
-    <h2>
-      Why Are Some States Wealthier ?
-    </h2>
-
+    <div id="sec2_c1"></div>
     <p>
-      
+      The price of admission into the top 1% (99th percentile) is almost dictated entirely by geography.
+      <br><br>
+      Minimum income of a top 1% earner in Kuala Lumpur is
+      <strong>astronomically greater than that of less developed states such as Perlis</strong>.
+      Whilst the minimum qualifying income for a top 1% earner in Selangor might be the upper requirement for other states.
+    </p>
+
+    <div id="sec2_c2"></div>
+    <p>
+      Breaking into the top 20% is a rapidly accelerating non-static milestone. In high-growth regions the income floor has surged aggressively upwards over a six-year period.
     </p>
 
   </section>
 
+  <hr class="divider">
+
   <section>
+    <h2>Reality of Income Distribution</h2>
 
-    <h2>
-      Conclusion
-    </h2>
-
+    <div id="sec3_c1"></div>
     <p>
+      The reality of Malaysia's class structure is a steep, unforgiving cliff. For the bottom 90% of households, monthly incomes scale along a painfully flat and uniform trajectory, leaving the vast majority of the population clustered tightly together.
+    </p>
 
+    <div id="sec3_c2"></div>
+    <p>
+      Tracking income tiers over time reveals a compounding economic divergence, with the T20 bracket breaking away from the B40 and M40 tiers.
     </p>
 
   </section>
 
-<script type="text/javascript">
+  <hr class="divider">
 
-  var chart1_sec1 = "./vega-lite/choropleth_map_sec1.json";
-  vegaEmbed('#chart1_sec1', chart1_sec1, { actions: false });
+  <section>
+    <h2>Why Are Some States Wealthier?</h2>
 
-  var chart2_sec1 = "./vega-lite/horizontal_bar_chart.json";
-  vegaEmbed('#chart2_sec1', chart2_sec1, { actions: false });
+    <div id="sec4_c2"></div>
 
-  var chart1_sec2 = "./vega-lite/line_chart_sec2.json";
-  vegaEmbed('#chart1_sec2', chart1_sec2, { actions: false });
+    <p>
+      Individual prosperity cannot be separated from regional economic output. With Malaysia being a mixed economy primarily driven by services and manufacturing sectors, states that focus on these sectors thrive and create a structural magnet for wealth.
+    </p>
 
-  var chart2_sec2 = "./vega-lite/slope_chart_sec2.json";
-  vegaEmbed('#chart2_sec2', chart2_sec2, { actions: false });
+    <div class="split-layout">
 
-  var chart1_sec3 = "./vega-lite/area_chart_sec3.json";
-  vegaEmbed('#chart1_sec3', chart1_sec3, { actions: false });
+      <div class="chart-panel">
+        <div id="sec4_c1"></div>
+      </div>
 
-  var chart2_sec3 = "./vega-lite/waffle_chart_sec3.json";
-  vegaEmbed('#chart2_sec3', chart2_sec3, { actions: false });
+      <div class="text-panel">
+        <p>
+          Regional inequality is embedded in the economic DNA of where we work; wealthier states thrive by anchoring their economies in high-value services and advanced manufacturing.
+          <br><br>
+          While lower-income states remain structurally tied to traditional agriculture, locking households into fundamentally lower wage scales.
+        </p>
+      </div>
 
+    </div>
 
-</script>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <h2>What Does It Take To Join The Top Earners?</h2>
+    
+    <div id="sec5_c1"></div>
+    <p>
+      T20 is not a single monolith of wealth; it hides an incredibly steep vertical climb, with reaching the 81st percentile being only a baseline gateway.
+      <br><br>
+      Advancing to the top 10% requires an extra 26.7% and entering the top 1% demands a
+      <strong>staggering 172.8%</strong> surge.
+    </p>
+    <div id="sec5_c2"></div>
+    <p>
+      Escaping the middle class requires overcoming a massive, quantified financial deficit; aspiring households face an uphill battle where standard incremental raises are simply not enough.
+      <br><br>
+      Bridging the immense cash gap to cross into the T20 threshold requires a life-changing structural leap in career or economic geography.
+    </p>
+
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <h2>Conclusion</h2>
+
+    <p>
+      Becoming a high earner in Malaysia is deeply governed by geography, industry sectors and a heavily skewed income curve.
+      <br><br>
+      To foster true economic mobility, national strategy must shift from viewing the wealthy as a monolith toward decentralizing high-value industries and closing the steep gaps that trap the majority.
+    </p>
+
+  </section>
+
+  <script type="text/javascript">
+
+    var sec1_chart1 = "./vega-lite/sec1_c1.json";
+    vegaEmbed('#sec1_c1', sec1_chart1, { actions: false });
+
+    var sec1_chart2 = "./vega-lite/sec1_c2.json";
+    vegaEmbed('#sec1_c2', sec1_chart2, { actions: false });
+
+    var sec2_chart1 = "./vega-lite/sec2_c1.json";
+    vegaEmbed('#sec2_c1', sec2_chart1, { actions: false });
+
+    var sec2_chart2 = "./vega-lite/sec2_c2.json";
+    vegaEmbed('#sec2_c2', sec2_chart2, { actions: false });
+
+    var sec3_chart1 = "./vega-lite/sec3_c1.json";
+    vegaEmbed('#sec3_c1', sec3_chart1, { actions: false });
+
+    var sec3_chart2 = "./vega-lite/sec3_c2.json";
+    vegaEmbed('#sec3_c2', sec3_chart2, { actions: false });
+
+    var sec4_chart1 = "./vega-lite/sec4_c1.json";
+    vegaEmbed('#sec4_c1', sec4_chart1, { actions: false });
+
+    var sec4_chart2 = "./vega-lite/sec4_c2.json";
+    vegaEmbed('#sec4_c2', sec4_chart2, { actions: false });
+
+    var sec5_chart1 = "./vega-lite/sec5_c1.json";
+    vegaEmbed('#sec5_c1', sec5_chart1, { actions: false });
+
+    var sec5_chart2 = "./vega-lite/sec5_c2.json";
+    vegaEmbed('#sec5_c2', sec5_chart2, { actions: false });
+
+  </script>
 
 </body>
 </html>

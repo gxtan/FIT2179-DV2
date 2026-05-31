@@ -1,8 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-
   "title": "Monthly Household Mean Income By States",
-
   "width": 500,
   "height": 200,
 

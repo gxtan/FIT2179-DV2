@@ -47,87 +47,25 @@ p {
   margin: 0 auto;
 }
 
-/* SECTION 1 */
-
-.text-chart-row {
-  display: flex;
-  gap: 24px;
-  align-items: flex-start;
-  margin-top: 10px;
+.split-layout {
+    display: flex;
+    align-items: center; 
+    gap: 40px;
+    margin: 30px 0;
 }
 
-.text-chart-row .text-left {
-  flex: 1;
-  margin: 0;
+#sec1_c2 {
+    flex: 1;
+    min-width: 0;
 }
 
-.para-chart {
-  display: flex;
-  gap: 24px;
-  align-items: flex-start;
-  margin-top: 10px;
+.text-panel {
+    flex: 1;
 }
 
-.para-chart .text-left {
-  flex: 1;
-  margin: 0;
-  line-height: 1.7;
-}
-
-#chart2_sec1 {
-  flex: 0 0 450px;
-}
-
-/* SECTION 2 */
-
-.full {
-  max-width: 1100px;
-  margin: 20px auto;
-  line-height: 1.7;
-}
-
-/* SECTION 2 */
-
-.chart-row {
-  display: flex;
-  gap: 40px;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-top: 30px;
-}
-
-#chart2_sec2,
-#chart3_sec2 {
-  flex: 1;
-  min-width: 0;
-}
-
-/* optional: make charts visually balanced */
-.vega-embed {
-  width: 100%;
-}
-
-/* SECTION 3 */
-
-#chart1_sec3 {
-  margin: 30px 0;
-}
-
-.chart-text-row {
-  display: flex;
-  gap: 100px;
-  align-items: flex-start;
-  margin-top: 20px;
-}
-
-#chart2_sec3 {
-  flex: 0 0 90px;
-}
-
-.chart-text-row .text-right {
-  flex: 1;
-  margin: 0;
-  line-height: 1.7;
+.text-panel p {
+    margin: 0;
+    line-height: 1.6;
 }
 
 /* VEGA CSS */

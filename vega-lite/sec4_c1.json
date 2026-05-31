@@ -1,8 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-
   "title": "GDP Heatmap by State and Sector (2023)",
-
   "data": {
     "url": "../data/sec4_c1_data.csv"
   },
@@ -14,6 +12,10 @@
     {
       "calculate": "log(datum.value + 1)",
       "as": "value_log"
+    },
+    {
+      "calculate": "datum.sector == 'p0' ? 'Overall GDP' : datum.sector == 'p1' ? 'Agriculture' : datum.sector == 'p2' ? 'Mining & Quarrying' : datum.sector == 'p3' ? 'Manufacturing' : datum.sector == 'p4' ? 'Construction' : datum.sector == 'p5' ? 'Services' : datum.sector == 'p6' ? 'Import Duties' : datum.sector",
+      "as": "sector_name"
     }
   ],
 
@@ -32,30 +34,52 @@
     },
 
     "y": {
-      "field": "sector",
+      "field": "sector_name",
       "type": "nominal",
       "title": "Sector",
-      "sort": ["p0", "p1", "p2", "p3", "p4", "p5", "p6"]
+      "sort": [
+        "Overall GDP",
+        "Agriculture",
+        "Mining & Quarrying",
+        "Manufacturing",
+        "Construction",
+        "Services",
+        "Import Duties"
+      ]
     },
 
     "color": {
       "field": "value_log",
       "type": "quantitative",
-      "title": "Value (log scaled)",
+      "title": "GDP Value",
       "scale": {
         "scheme": "inferno"
       }
     },
 
     "tooltip": [
-      { "field": "state", "type": "nominal" },
-      { "field": "sector", "type": "nominal" },
-      { "field": "value", "type": "quantitative", "format": "," },
-      { "field": "value_log", "type": "quantitative" }
+      {
+        "field": "state",
+        "type": "nominal",
+        "title": "State"
+      },
+      {
+        "field": "sector_name",
+        "type": "nominal",
+        "title": "Sector"
+      },
+      {
+        "field": "value",
+        "type": "quantitative",
+        "title": "GDP Value",
+        "format": ","
+      }
     ]
   },
 
   "config": {
-    "view": { "stroke": null }
+    "view": {
+      "stroke": null
+    }
   }
 }

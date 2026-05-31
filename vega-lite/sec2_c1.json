@@ -1,6 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Dumbbell chart showing the 99th percentile income range by state for 2024.",
+  "title": "99th percentile income range by state for 2024",
+  "width": 980,
+  "height": 400,
   "data": {
     "url": "../data/sec2_c1_data.csv"
   },
@@ -9,8 +11,6 @@
       "filter": "datum.date == 2024"
     }
   ],
-  "width": 980,
-  "height": 400,
   "encoding": {
     "y": {
       "field": "state",
@@ -28,7 +28,7 @@
           "field": "income",
           "type": "quantitative",
           "aggregate": "min",
-          "title": "Median Monthly Income (RM)"
+          "title": "Average Monthly Income (RM)"
         },
         "x2": {
           "field": "income",

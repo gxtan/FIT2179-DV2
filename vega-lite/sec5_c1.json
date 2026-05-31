@@ -1,0 +1,144 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Percentage difference within T20",
+  "width": 1010,
+  "height": 450,
+  "data": {
+    "url": "../data/sec5_c1_data.csv"
+  },
+  "transform": [
+    {
+      "filter": "datum.variable == 'mean'"
+    },
+    {
+      "calculate": "'P' + datum.percentile",
+      "as": "label"
+    },
+    {
+      "calculate": "0",
+      "as": "zero"
+    },
+    {
+      "calculate": "datum.percentile == 81 ? datum.income : 0",
+      "as": "p81_income_raw"
+    },
+    {
+      "joinaggregate": [
+        {"op": "max", "field": "p81_income_raw", "as": "t20_baseline"}
+      ]
+    },
+    {
+      "calculate": "datum.income == datum.t20_baseline ? 'Baseline' : '+' + round((datum.income - datum.t20_baseline) / datum.t20_baseline * 1000) / 10 + '% vs T20 Entry'",
+      "as": "pct_increase_label"
+    }
+  ],
+  "encoding": {
+    "y": {
+      "field": "label",
+      "type": "nominal",
+      "title": null,
+      "sort": {
+        "field": "percentile",
+        "order": "descending"
+      }
+    },
+    "x": {
+      "field": "income",
+      "type": "quantitative",
+      "title": "T20 Average Monthly Household Income (RM)",
+      "scale": {
+        "domain": [0, 50000]
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 2,
+        "color": "#e0e0e0"
+      },
+      "encoding": {
+        "x": {
+          "field": "zero",
+          "type": "quantitative"
+        },
+        "x2": {
+          "field": "income"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 220
+      },
+      "encoding": {
+        "color": {
+          "condition": {
+            "test": "datum.percentile == 81 || datum.percentile == 90 || datum.percentile == 95 || datum.percentile == 99",
+            "value": "#1f77b4"
+          },
+          "value": "#d0d0d0"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 10,
+        "fontSize": 12,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "text": {
+          "field": "income",
+          "type": "quantitative",
+          "format": ","
+        },
+        "color": {
+          "condition": {
+            "test": "datum.percentile == 81 || datum.percentile == 90 || datum.percentile == 95 || datum.percentile == 99",
+            "value": "#1f77b4"
+          },
+          "value": "#a0a0a0"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 70,
+        "fontSize": 11,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {
+          "field": "pct_increase_label",
+          "type": "nominal"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.percentile == 81 || datum.percentile == 90 || datum.percentile == 95 || datum.percentile == 99",
+            "value": "#2c3e50"
+          },
+          "value": "transparent"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 14
+    }
+  }
+}

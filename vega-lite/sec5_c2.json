@@ -1,0 +1,128 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Threshold to reach T20 for each income percentile",
+  "width": 980,
+  "height": 400,
+  "data": {
+    "url": "../data/sec5_c2_data.csv"
+  },
+  "transform": [
+    {
+      "filter": "datum.variable == 'mean'"
+    },
+    {
+      "calculate": "datum.percentile == 81 ? datum.income : null",
+      "as": "t20_income_raw"
+    },
+    {
+      "joinaggregate": [
+        {"op": "max", "field": "t20_income_raw", "as": "t20_threshold"}
+      ]
+    },
+    {
+      "filter": "datum.percentile < 81"
+    },
+    {
+      "filter": "datum.percentile == 1 || datum.percentile % 5 == 0"
+    },
+    {
+      "calculate": "datum.t20_threshold - datum.income",
+      "as": "income_gap"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "area",
+        "color": "#e74c3c",
+        "opacity": 0.15,
+        "interpolate": "monotone"
+      },
+      "encoding": {
+        "x": {
+          "field": "percentile",
+          "type": "quantitative",
+          "title": "Percentile",
+          "axis": {
+            "values": [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80]
+          }
+        },
+        "y": {
+          "field": "income",
+          "type": "quantitative",
+          "title": "Average Monthly Household Income (RM)"
+        },
+        "y2": {
+          "field": "t20_threshold"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "line",
+        "color": "#1f77b4",
+        "strokeWidth": 3.5,
+        "interpolate": "monotone"
+      },
+      "encoding": {
+        "x": {"field": "percentile", "type": "quantitative"},
+        "y": {"field": "income", "type": "quantitative"}
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#c0392b",
+        "strokeWidth": 2,
+        "strokeDash": [5, 5]
+      },
+      "encoding": {
+        "y": {"field": "t20_threshold", "type": "quantitative"}
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 70,
+        "color": "#1f77b4",
+        "opacity": 0.8
+      },
+      "encoding": {
+        "x": {"field": "percentile", "type": "quantitative"},
+        "y": {"field": "income", "type": "quantitative"},
+        "tooltip": [
+          {"field": "percentile", "type": "quantitative", "title": "Percentile (P)"},
+          {"field": "income", "type": "quantitative", "title": "Current Income (RM)", "format": ","},
+          {"field": "t20_threshold", "type": "quantitative", "title": "T20 Threshold (RM)", "format": ","},
+          {"field": "income_gap", "type": "quantitative", "title": "Gap Remaining (RM)", "format": ","}
+        ]
+      }
+    },
+    {
+      "data": {"values": [{"percentile": 3, "text": "T20 Entry Target: RM 12,787"}]},
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "dy": -6,
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#c0392b"
+      },
+      "encoding": {
+        "x": {"field": "percentile", "type": "quantitative"},
+        "y": {"datum": 12787, "type": "quantitative"},
+        "text": {"field": "text", "type": "nominal"}
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 14,
+      "grid": true
+    }
+  }
+}
